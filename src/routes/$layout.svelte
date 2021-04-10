@@ -74,7 +74,8 @@
 
         z-index: 2;
 
-        padding: 35px 75px;
+        width: 575px;
+        padding: 35px 0;
 
         background-color: white;
 

@@ -57,13 +57,14 @@
     }
 
     #logo {
-        width: 375px;
-        margin-top: 50px;
+        width: 400px;
+        margin-top: 45px;
     }
 
     #login {
         flex-direction: column;
-        width: 355px;
+
+        width: 375px;
 
         #login-button {
             display: flex;
@@ -77,10 +78,10 @@
             background: $gradient-login-button;
 
             font-family: $font-circular;
-            font-size: 20px;
+            font-size: 21px;
             font-weight: 500;
 
-            $content-height: 28px;
+            $content-height: 32px;
 
             line-height: $content-height;
 
@@ -92,7 +93,7 @@
 
         #terms {
             margin-top: 15px;
-            padding: 0 15px;
+            padding: 0 25px;
 
             text-align: center;
         }
