@@ -1,10 +1,18 @@
 <script>
+    import Link from '$lib/components/Link.svelte';
+
     import logo from '../assets/images/logo.svg';
     import msLogo from '../assets/images/ms_logo.svg';
+
+    const links = [
+        { label: 'EpiMac', to: 'https://epimac.org' },
+        { label: 'GitHub', to: 'https://github.com/EpiMac/infinity-cast' },
+        { label: 'À Propos', to: '/about' }
+    ];
 </script>
 
 <svelte:head>
-    <title>Infinity cast - Se connecter</title>
+    <title>Infinity Cast - Se connecter</title>
 </svelte:head>
 
 <img id="logo" src="{logo}" />
@@ -21,15 +29,14 @@
 
 <div id="footer">
     <div id="links">
-        <a href="https://epimac.org/" rel="external" target="_blank">EpiMac</a>
-        &nbsp;·&nbsp;
-        <a href="https://github.com/EpiMac/infinity-cast" rel="external" target="_blank">GitHub</a>
-        &nbsp;·&nbsp;
-        <a>À Propos</a>
+        {#each links as { label, to }, index (label) }
+            {#if index}&nbsp;·&nbsp;{/if}
+            <Link {to}>{label}</Link>
+        {/each}
     </div>
     <p class="subtext">
         Copyright © 2021 Adrien ‘Litarvan’ Navratil et EpiMac<br/>
-        Sous <a href="https://github.com/EpiMac/infinity-news/blob/master/LICENSE" rel="external" class="link">licence MIT</a>
+        Sous <a href="https://github.com/EpiMac/infinity-cast/blob/master/LICENSE" rel="external" target="_blank" class="link">licence MIT</a>
     </p>
 </div>
 
