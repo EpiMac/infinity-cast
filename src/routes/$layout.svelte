@@ -11,7 +11,7 @@
     let background;
 
 	onMount(() => {
-        const nvg = new NoisyVerticalGradient(200, 1080, ['#343D55', '#151925'] );
+        const nvg = new NoisyVerticalGradient(50, 1080, ['#343D55', '#0e1016'] );
      // const nvg = new NoisyVerticalGradient(50, 1080, ['#464F67', '#111420'] );
 
         background.style.backgroundImage = nvg.render_png();
