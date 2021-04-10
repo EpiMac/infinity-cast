@@ -21,5 +21,14 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm ci
-    - run: npm run build
+    - name: Cache .pnpm-store
+      uses: actions/cache@v1
+      with:
+        path: ~/.pnpm-store
+        key: ${{ runner.os }}-node${{ matrix.node-version }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+    - name: Install pnpm
+      run: curl -f https://get.pnpm.io/v6.js | node - add --global pnpm@6
+    - name: Fetch dependencies
+      run: pnpm install
+    - name: Build project
+      run: pnpm build
