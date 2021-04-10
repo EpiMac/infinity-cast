@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="688px" height="333px" viewBox="0 0 688 333" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Shape 1</title>
+    <defs>
+        <filter filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="-2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="17.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#2581CB" offset="0%"></stop>
+            <stop stop-color="#1652BC" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#32A3FF" offset="0%"></stop>
+            <stop stop-color="#176AFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Mozaic" transform="translate(-516, -877)">
+            <g transform="translate(588, 589) scale(-1, 1) translate(-588, -589) " id="Shape-1">
+                <g filter="url(#filter-1)" transform="translate(0.000000, 909)">
+                    <polygon id="Face-2" fill="url(#linearGradient-2)" points="50 252 321 0 632 252"></polygon>
+                    <polygon id="Face-1" fill="url(#linearGradient-3)" points="0 268 320 0 546 251"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

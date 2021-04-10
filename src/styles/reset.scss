@@ -1,0 +1,15 @@
+@import '/node_modules/normalizecss/normalize.css';
+
+div {
+    display: flex;
+}
+
+button {
+    outline: none;
+    border: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
