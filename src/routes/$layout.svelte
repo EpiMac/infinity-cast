@@ -3,8 +3,8 @@
 
     import NoisyVerticalGradient from "$lib/NoisyVerticalGradient";
 
-    import triangle from '../assets/images/triangle.svg?raw';
-    import triangle2 from '../assets/images/triangle_2.svg?raw';
+    import topTriangle from '../assets/images/top_triangle.svg?raw';
+    import bottomTriangle from '../assets/images/bottom_triangle.svg?raw';
 
     import '../app.scss';
 
@@ -19,8 +19,8 @@
 </script>
 
 <div id="background" bind:this={background}>
-    <div id="top-triangle" class="triangle">{@html triangle2}</div>
-    <div id="bottom-triangle" class="triangle">{@html triangle}</div>
+    <div id="top-triangle" class="triangle">{@html topTriangle}</div>
+    <div id="bottom-triangle" class="triangle">{@html bottomTriangle}</div>
 </div>
 
 <div id="content">
@@ -43,18 +43,26 @@
         .triangle {
             position: absolute;
 
-            &#top-triangle {
-                top: -75px;
-                left: -185px;
+            $shadowShift: 3px;
+            $shadowSize: 15px;
+            $shadowColor: rgba(0, 0, 0, .25);
 
-                transform: rotate(-17deg);
+            &#top-triangle {
+                top: -175px;
+                left: -175px;
+
+                width: 500px;
+
+                filter: drop-shadow($shadowShift $shadowShift $shadowSize $shadowColor);
             }
 
             &#bottom-triangle {
-                bottom: -75px;
-                right: -100px;
+                bottom: -50px;
+                right: -75px;
 
-                transform: rotate(-7deg);
+                width: 600px;
+
+                filter: drop-shadow(#{-$shadowShift} #{-$shadowShift} $shadowSize $shadowColor);
             }
         }
     }
