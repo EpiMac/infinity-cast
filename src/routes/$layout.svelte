@@ -57,8 +57,8 @@
             }
 
             &#bottom-triangle {
-                bottom: -50px;
-                right: -75px;
+                bottom: -75px;
+                right: -100px;
 
                 width: 600px;
 

@@ -1,9 +1,16 @@
 <script>
+    import { fade } from 'svelte/transition';
+    import { quadIn, quadOut } from 'svelte/easing';
+
+    import swapper from '$lib/swapper';
+
     import Link from '$lib/components/Link.svelte';
+    import Spinner from '$lib/components/Spinner.svelte';
 
-    import logo from '../assets/images/logo.svg';
-    import msLogo from '../assets/images/ms_logo.svg';
+    import logo from '../assets/images/logo.svg?raw';
+    import msLogo from '../assets/images/ms_logo.svg?raw';
 
+    const { state, toggle, outro } = swapper();
     const links = [
         { label: 'EpiMac', to: 'https://epimac.org' },
         { label: 'GitHub', to: 'https://github.com/EpiMac/infinity-cast' },
@@ -15,17 +22,24 @@
     <title>Infinity Cast - Se connecter</title>
 </svelte:head>
 
-<img id="logo" src="{logo}" />
+<div id="logo">{@html logo}</div>
 
-<div id="login">
-    <button id="login-button" class="clickable">
-        <img id="ms-logo" src="{msLogo}" />
-        <span>Se connecter avec Microsoft</span>
-    </button>
-    <p id="terms" class="subtext">
-        En cliquant sur le bouton ci-dessus vous acceptez les <a class="link">conditions d’utilisation</a> du service
-    </p>
-</div>
+{#if $state === 'A'}
+    <div id="login" transition:fade={{ duration: 150, easing: quadOut }} on:outroend={outro}>
+        <button id="login-button" class="clickable" on:click={toggle}>
+            <div id="ms-logo">{@html msLogo}</div>
+            <span>Se connecter avec Microsoft</span>
+        </button>
+        <p id="terms" class="subtext">
+            En cliquant sur le bouton ci-dessus vous acceptez les <a class="link">conditions d’utilisation</a> du service
+        </p>
+    </div>
+{/if}
+{#if $state === 'B'}
+    <div id="spinner" transition:fade={{ duration: 150, easing: quadIn }} on:outroend={outro}>
+        <Spinner />
+    </div>
+{/if}
 
 <div id="footer">
     <div id="links">
@@ -97,6 +111,10 @@
 
             text-align: center;
         }
+    }
+
+    #spinner {
+        margin-bottom: 20px;
     }
 
     #footer {
