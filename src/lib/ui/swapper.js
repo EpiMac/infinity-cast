@@ -12,7 +12,7 @@ export default function () {
         }
 
         swapping = true;
-        next = next === 'A' ? 'B' : 'A';
+        next = next === 'A' ? 'B' : null;
 
         state.set(null);
     }

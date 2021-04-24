@@ -3,6 +3,6 @@
     $: params = to.startsWith('http') ? { rel: 'external', target: '_blank' } : {};
 </script>
 
-<a href="{to}" {...params}>
+<a class="link" href={to} {...params}>
     <slot />
 </a>

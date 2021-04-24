@@ -1,7 +1,9 @@
 <script>
-    import { onMount } from "svelte";
+    import { onMount } from 'svelte';
 
-    import NoisyVerticalGradient from "$lib/NoisyVerticalGradient";
+    import { page } from '$app/stores';
+
+    import NoisyVerticalGradient from '$lib/ui/background';
 
     import topTriangle from '../assets/images/top_triangle.svg?raw';
     import bottomTriangle from '../assets/images/bottom_triangle.svg?raw';
@@ -10,10 +12,8 @@
 
     let background;
 
-	onMount(() => {
-        const nvg = new NoisyVerticalGradient(50, 1080, ['#343D55', '#0e1016'] );
-     // const nvg = new NoisyVerticalGradient(50, 1080, ['#464F67', '#111420'] );
-
+    onMount(() => {
+        const nvg = new NoisyVerticalGradient(50, 1080, ['#343D55', '#0e1016']);
         background.style.backgroundImage = nvg.render_png();
     });
 </script>
@@ -23,7 +23,7 @@
     <div id="bottom-triangle" class="triangle">{@html bottomTriangle}</div>
 </div>
 
-<div id="content">
+<div id="content" class:wide={!$page.path.startsWith('/auth/')}>
     <slot />
 </div>
 
@@ -74,11 +74,26 @@
 
         z-index: 2;
 
+        // width: 1300px;
         width: 575px;
         padding: 35px 0;
 
         background-color: white;
 
-        transition: width .25s;
+        // transition: width .25s; TODO: Why is this not working?
+
+        &.wide {
+            animation: content-wide .6s 1 forwards cubic-bezier(0.65, 0, 0.35, 1);
+        }
+    }
+
+    @keyframes content-wide {
+        0% {
+            width: 575px;
+        }
+
+        100% {
+            width: 1050px;
+        }
     }
 </style>

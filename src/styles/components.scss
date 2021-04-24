@@ -1,8 +1,23 @@
+@import './vars';
+
 button, a {
     cursor: pointer;
     transition: opacity .15s;
     
     &:hover {
         opacity: .85;
+    }
+}
+
+.subtext {
+    color: $color-subtext;
+    
+    font-size: 16px;
+    line-height: 22px;
+    
+    text-align: center;
+    
+    .link {
+        color: $color-subtext-link;
     }
 }
