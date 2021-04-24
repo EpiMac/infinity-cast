@@ -18,17 +18,12 @@
 </script>
 
 <script>
-    import { onMount } from 'svelte';
     import { fade } from 'svelte/transition';
 
     import { title } from '../app';
 
     import Footer from '$lib/components/Footer.svelte';
     import Logo from '$lib/components/Logo.svelte';
-
-    let displayLogout = false;
-
-    onMount(() => setTimeout(() => displayLogout = true, 300));
 </script>
 
 <svelte:head>
@@ -40,12 +35,10 @@
     <div id="logo">
         <Logo />
     </div>
-    {#if displayLogout}
-        <a id="logout" href="/logout" in:fade>Se déconneter</a>
-    {/if}
+    <a id="logout" href="/auth/logout" sveltekit:prefetch in:fade={{ delay: 200 }}>Se déconneter</a>
 </div>
 
-<div in:fade>
+<div in:fade={{ delay: 400, duration: 175 }}>
     Salut :)
 </div>
 
@@ -59,7 +52,10 @@
         justify-content: space-between;
         align-items: center;
 
+        overflow: hidden;
+
         #logo {
+            flex-shrink: 0;
             animation: logo-appear .6s 1 forwards;
         }
 

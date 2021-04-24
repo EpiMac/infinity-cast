@@ -87,6 +87,7 @@
         }
     }
 
+    // TODO: Replace with transition
     @keyframes content-wide {
         0% {
             width: 575px;
