@@ -1,5 +1,9 @@
 @import '/node_modules/normalizecss/normalize.css';
 
+body {
+    overflow: hidden;
+}
+
 div {
     display: flex;
     box-sizing: border-box;

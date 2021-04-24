@@ -4,7 +4,7 @@ button, a {
     cursor: pointer;
     transition: opacity .15s;
     
-    &:hover {
+    &:not(.opaque):hover {
         opacity: .85;
     }
 }
@@ -19,5 +19,19 @@ button, a {
     
     .link {
         color: $color-subtext-link;
+    }
+}
+
+.card {
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, .15) 0 2px 8px;
+    
+    transition: all .2s;
+    
+    &.clickable:hover {
+        cursor: pointer;
+        box-shadow: rgba(0, 0, 0, .25) 0 2px 9px;
+        
+        transform: translateY(-1px);
     }
 }

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="73px" height="73px" viewBox="0 0 73 73" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-26.000000, -25.000000)">
+            <g transform="translate(30.000000, 27.000000)">
+                <g>
+                    <use fill="black" fill-opacity="1" filter="url(#mf3)" xlink:href="#mp2"></use>
+                    <use fill="url(#mg1)" fill-rule="evenodd" xlink:href="#mp2"></use>
+                </g>
+                <g opacity="0" transform="translate(29.000000, 10.000000)">
+                    <g>
+                        <use fill="black" fill-opacity="1" filter="url(#mf6)" xlink:href="#mp5"></use>
+                        <use fill="url(#mg4)" fill-rule="evenodd" xlink:href="#mp5"></use>
+                    </g>
+                    <g>
+                        <use fill="black" fill-opacity="1" filter="url(#mf9)" xlink:href="#mp8"></use>
+                        <use fill="url(#mg7)" fill-rule="evenodd" xlink:href="#mp8"></use>
+                    </g>
+                </g>
+                <g transform="translate(21.500000, 17.000000)">
+                    <use fill="black" fill-opacity="1" filter="url(#mf12)" xlink:href="#mp11"></use>
+                    <use fill="url(#mg10)" fill-rule="evenodd" xlink:href="#mp11"></use>
+                </g>
+                <g opacity="0" transform="translate(33.783780, 33.482080) rotate(-30.000000) translate(-33.783780, -33.482080) translate(12.495077, 20.120969)">
+                    <g transform="translate(37.945556, 18.705556) rotate(30.000000) translate(-37.945556, -18.705556) ">
+                        <use fill="black" fill-opacity="1" filter="url(#mf15)" xlink:href="#mp14"></use>
+                        <use fill="url(#mg13)" fill-rule="evenodd" xlink:href="#mp14"></use>
+                    </g>
+                    <g>
+                        <use fill="black" fill-opacity="1" filter="url(#mf18)" xlink:href="#mp17"></use>
+                        <use fill="url(#mg16)" fill-rule="evenodd" xlink:href="#mp17"></use>
+                    </g>
+                    <g transform="translate(37.945556, 4.810000) rotate(-30.000000) translate(-37.945556, -4.810000) ">
+                        <use fill="black" fill-opacity="1" filter="url(#mf21)" xlink:href="#mp20"></use>
+                        <use fill="url(#mg19)" fill-rule="evenodd" xlink:href="#mp20"></use>
+                    </g>
+                    <g>
+                        <use fill="black" fill-opacity="1" filter="url(#mf24)" xlink:href="#mp23"></use>
+                        <use fill="url(#mg22)" fill-rule="evenodd" xlink:href="#mp23"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
