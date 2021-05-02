@@ -74,26 +74,18 @@
 
         z-index: 2;
 
-        // width: 1300px;
         width: 575px;
         padding: 35px 0;
 
         background-color: white;
 
-        // transition: width .25s; TODO: Why is this not working?
+        /*
+         * Until https://github.com/sveltejs/kit/issues/1214 is fixed, updating this file during development
+         * prevents the transition. Restart the dev server to fix it.
+         */
+        transition: width .6s cubic-bezier(0.65, 0, 0.35, 1);
 
         &.wide {
-            animation: content-wide .6s 1 forwards cubic-bezier(0.65, 0, 0.35, 1);
-        }
-    }
-
-    // TODO: Replace with transition
-    @keyframes content-wide {
-        0% {
-            width: 575px;
-        }
-
-        100% {
             width: 1050px;
         }
     }
