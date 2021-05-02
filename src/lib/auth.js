@@ -1,10 +1,12 @@
-export let user = null;
+import { writable } from 'svelte/store';
+
+export let user = writable(null);
 
 export function login()
 {
     // TODO: Implement login
     return new Promise(r => setTimeout(() => {
-        user = {};
+        user.set({});
         r();
     }, 1500));
 }

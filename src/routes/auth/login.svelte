@@ -7,11 +7,8 @@
     import { title } from '../../app';
     import { login } from '$lib/auth';
     import swapper from '$lib/ui/swapper';
-    // import { send, keys } from '$lib/ui/crossfade';
 
     import Spinner from '$lib/components/Spinner.svelte';
-    import Logo from '$lib/components/Logo.svelte';
-    import Footer from '$lib/components/Footer.svelte';
 
     import msLogo from '../../assets/images/ms_logo.svg?raw';
 
@@ -37,11 +34,6 @@
     <title>{title('Se connecter')}</title>
 </svelte:head>
 
-<!-- <div id="logo" out:send={{ key: keys.logo }}> -->
-<div id="logo">
-    <Logo />
-</div>
-
 {#if $state === 'A'}
     <div id="login" transition:fade={{ duration: 150, easing: quadOut }} on:outroend={outro}>
         <button id="login-button" class="clickable" on:click={doLogin}>
@@ -59,8 +51,6 @@
         <Spinner />
     </div>
 {/if}
-
-<Footer />
 
 <style lang="scss">
     @import 'src/styles/vars';

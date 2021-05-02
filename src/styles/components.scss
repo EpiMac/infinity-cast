@@ -35,3 +35,16 @@ button, a {
         transform: translateY(-1px);
     }
 }
+
+.variable {
+    /*
+     * Until https://github.com/sveltejs/kit/issues/1214 is fixed, updating $layout.svelte during development
+     * prevents the transitions. Restart the dev server to fix it.
+     */
+    
+    $transition-duration: .6s;
+    $transition-function: cubic-bezier(0.65, 0, 0.35, 1);
+    
+    transition: width $transition-duration $transition-function,
+                margin $transition-duration $transition-function;
+}

@@ -1,9 +1,12 @@
 <script>
     import { onMount } from 'svelte';
-
-    import { page } from '$app/stores';
+    import { fade } from 'svelte/transition';
 
     import NoisyVerticalGradient from '$lib/ui/background';
+    import { user } from '$lib/auth';
+
+    import Logo from '$lib/components/Logo.svelte';
+    import Footer from '../lib/components/Footer.svelte';
 
     import topTriangle from '../assets/images/top_triangle.svg?raw';
     import bottomTriangle from '../assets/images/bottom_triangle.svg?raw';
@@ -23,8 +26,20 @@
     <div id="bottom-triangle" class="triangle">{@html bottomTriangle}</div>
 </div>
 
-<div id="content" class:wide={!$page.path.startsWith('/auth/')}>
+<div id="content" class="variable" class:wide={$user}>
+    <div id="header">
+        <div id="logo" class="variable">
+            <Logo />
+        </div>
+
+        {#if $user}
+            <a id="logout" href="/auth/logout" sveltekit:prefetch in:fade={{ delay: 200 }}>Se déconneter</a>
+        {/if}
+    </div>
+
     <slot />
+
+    <Footer />
 </div>
 
 <style lang="scss">
@@ -79,14 +94,39 @@
 
         background-color: white;
 
-        /*
-         * Until https://github.com/sveltejs/kit/issues/1214 is fixed, updating this file during development
-         * prevents the transition. Restart the dev server to fix it.
-         */
-        transition: width .6s cubic-bezier(0.65, 0, 0.35, 1);
+        #header {
+            width: 100%;
+            padding: 20px 75px;
+
+            justify-content: space-between;
+            align-items: center;
+
+            overflow: hidden;
+
+            #logo {
+                flex-shrink: 0;
+
+                width: 400px;
+                margin-top: 25px;
+                margin-left: 12.5px; // Same as `justify-content: center` but with nice transition
+            }
+
+            #logout {
+                color: #251515;
+
+                font-size: 22px;
+                font-weight: 500;
+            }
+        }
 
         &.wide {
             width: 1050px;
+
+            #header #logo {
+                width: 300px;
+                margin-top: 0;
+                margin-left: 0;
+            }
         }
     }
 </style>
