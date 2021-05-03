@@ -13,5 +13,6 @@ export function login()
 
 export function logout()
 {
+    // TODO: Implement logout
     user.set(null);
 }
