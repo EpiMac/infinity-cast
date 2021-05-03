@@ -5,6 +5,7 @@
     import { goto, prefetch } from '$app/navigation';
 
     import { title } from '../../app';
+
     import { login } from '$lib/auth';
     import swapper from '$lib/ui/swapper';
 
@@ -55,47 +56,41 @@
 <style lang="scss">
     @import 'src/styles/vars';
 
-    #logo {
-        width: 400px;
-        margin-top: 45px;
-    }
-
     #login {
         flex-direction: column;
-
         width: 375px;
+    }
 
-        #login-button {
-            display: flex;
-            justify-content: center;
+    #login-button {
+        display: flex;
+        justify-content: center;
 
-            padding: 16px 0;
+        padding: 16px 0;
 
-            border-radius: 5px;
+        border-radius: 5px;
 
-            color: white;
-            background: $gradient-login-button;
+        color: white;
+        background: $gradient-login-button;
 
-            font-family: $font-circular;
-            font-size: 21px;
-            font-weight: 500;
+        font-family: $font-circular;
+        font-size: 21px;
+        font-weight: 500;
 
-            $content-height: 32px;
+        $content-height: 32px;
 
-            line-height: $content-height;
+        line-height: $content-height;
 
-            #ms-logo {
-                height: $content-height;
-                margin-right: 16px;
-            }
+        #ms-logo {
+            height: $content-height;
+            margin-right: 16px;
         }
+    }
 
-        #terms {
-            margin-top: 15px;
-            padding: 0 25px;
+    #terms {
+        margin-top: 15px;
+        padding: 0 25px;
 
-            text-align: center;
-        }
+        text-align: center;
     }
 
     #spinner {

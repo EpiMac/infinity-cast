@@ -1,6 +1,25 @@
+<script context="module">
+    import { get } from 'svelte/store';
+
+    import { user } from '$lib/auth';
+
+    export async function load() {
+        if (get(user)) {
+            return {};
+        }
+
+        return {
+            redirect: '/auth/login',
+            status: 302
+        };
+    }
+</script>
+
 <script>
     import { onMount } from 'svelte';
     import { fade } from 'svelte/transition';
+
+    import { title } from '../../app';
 
     import { logout } from '$lib/auth';
 
@@ -11,6 +30,10 @@
         setTimeout(() => displayed = true, 150); // Sad but needed till svelte add an equivalent to Vue's <transition>
     });
 </script>
+
+<svelte:head>
+    <title>{title('Déconnexion')}</title>
+</svelte:head>
 
 {#if displayed}
     <div id="logout" in:fade>
