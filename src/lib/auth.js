@@ -10,3 +10,8 @@ export function login()
         r();
     }, 1500));
 }
+
+export function logout()
+{
+    user.set(null);
+}

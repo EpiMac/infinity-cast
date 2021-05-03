@@ -38,7 +38,7 @@
     <title>{title('Accueil')}</title>
 </svelte:head>
 
-<div id="menu" in:fade={{ delay: 400, duration: 175 }}>
+<div id="menu" in:fade={{ delay: 400, duration: 175 }} out:fade={{ duration: 150 }}>
     {#each entries as entry}
         <a class="entry card clickable opaque" sveltekit:prefetch href={entry.path}>
             <div class="icon">{@html entry.icon}</div>
