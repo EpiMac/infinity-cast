@@ -20,7 +20,9 @@
         </div>
 
         {#if $user}
-            <a id="logout" href="/auth/logout" sveltekit:prefetch in:fade={{ delay: 200 }}>Se déconneter</a>
+            <a id="logout" href="/auth/logout" sveltekit:prefetch in:fade={{ delay: 200 }} out:fade={{ duration: 175 }}>
+                Se déconneter
+            </a>
         {/if}
     </div>
 
